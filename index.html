@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Profile Section -->
+    <div class="profile-card">
+      <img src="profile.jpg" alt="Profile Picture" class="profile-img">
+      <p class="report">Report for</p>
+      <h2>Jeremy Robson</h2>
+      <div class="timeframe-options">
+        <span class="timeframe active" data-timeframe="daily">Daily</span>
+        <span class="timeframe" data-timeframe="weekly">Weekly</span>
+        <span class="timeframe" data-timeframe="monthly">Monthly</span>
+      </div>
+    </div>
+
+    <!-- Activity Cards -->
+    <div class="activity-cards">
+      <div class="card work" data-daily="5hrs" data-weekly="32hrs" data-monthly="128hrs">
+        <h3>Work</h3>
+        <p class="hours">32hrs</p>
+        <p class="last-week">Last Week - 36hrs</p>
+      </div>
+      <div class="card play" data-daily="1hr" data-weekly="10hrs" data-monthly="40hrs">
+        <h3>Play</h3>
+        <p class="hours">10hrs</p>
+        <p class="last-week">Last Week - 8hrs</p>
+      </div>
+      <div class="card study" data-daily="0.5hr" data-weekly="4hrs" data-monthly="16hrs">
+        <h3>Study</h3>
+        <p class="hours">4hrs</p>
+        <p class="last-week">Last Week - 7hrs</p>
+      </div>
+      <div class="card exercise" data-daily="1hr" data-weekly="4hrs" data-monthly="16hrs">
+        <h3>Exercise</h3>
+        <p class="hours">4hrs</p>
+        <p class="last-week">Last Week - 5hrs</p>
+      </div>
+      <div class="card social" data-daily="1hr" data-weekly="5hrs" data-monthly="20hrs">
+        <h3>Social</h3>
+        <p class="hours">5hrs</p>
+        <p class="last-week">Last Week - 10hrs</p>
+      </div>
+      <div class="card self-care" data-daily="0.2hr" data-weekly="2hrs" data-monthly="8hrs">
+        <h3>Self Care</h3>
+        <p class="hours">2hrs</p>
+        <p class="last-week">Last Week - 2hrs</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // script.js
+document.addEventListener("DOMContentLoaded", () => {
+  const timeframeOptions = document.querySelectorAll(".timeframe");
+  const cards = document.querySelectorAll(".card");
+
+  timeframeOptions.forEach(option => {
+    option.addEventListener("click", () => {
+      // Update active class for timeframe options
+      timeframeOptions.forEach(opt => opt.classList.remove("active"));
+      option.classList.add("active");
+
+      const selectedTimeframe = option.getAttribute("data-timeframe");
+
+      // Update hours based on selected timeframe
+      cards.forEach(card => {
+        const hours = card.querySelector(".hours");
+        hours.textContent = card.getAttribute(`data-${selectedTimeframe}`);
+      });
+    });
+  });
+});
+
+  </script>
+</body>
+</html>

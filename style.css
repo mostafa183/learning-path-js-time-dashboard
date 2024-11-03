@@ -1,0 +1,126 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #0d1322;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .dashboard {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 100%;
+    padding: 20px;
+  }
+  
+  .profile-card {
+    background-color: #5746ea;
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .report {
+    font-size: 1rem;
+    opacity: 0.8;
+  }
+  
+  .profile-card h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+  
+  .timeframe-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .timeframe {
+    font-size: 0.9rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  
+  .timeframe:hover,
+  .timeframe.active {
+    opacity: 1;
+    text-decoration: underline;
+  }
+  
+  .activity-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .card {
+    background-color: #1f2641;
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card h3 {
+    font-size: 1rem;
+    opacity: 0.8;
+  }
+  
+  .hours {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .last-week {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    margin-top: 10px;
+  }
+  
+  /* Background Colors for Cards */
+  .work { background-color: #ff8b64; }
+  .play { background-color: #56c2e6; }
+  .study { background-color: #ff5e7d; }
+  .exercise { background-color: #4bcf82; }
+  .social { background-color: #7335d2; }
+  .self-care { background-color: #f1c65b; }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .activity-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+  
